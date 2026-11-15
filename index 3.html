@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задание — Лазерные технологии</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:24px;font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#0b0d12,#1d2633);color:#fff
+}
+.card{
+  width:min(760px,100%);background:#fff;color:#15191f;border-radius:24px;
+  padding:34px;box-shadow:0 20px 60px rgba(0,0,0,.35)
+}
+.tag{display:inline-block;background:#111827;color:#fff;padding:8px 13px;border-radius:999px;
+font-size:13px;font-weight:700;letter-spacing:.04em}
+h1{font-size:clamp(26px,5vw,42px);margin:20px 0 12px}
+.lead{font-size:20px;line-height:1.55}
+.question{background:#f1f4f7;border-left:5px solid #111827;padding:20px;border-radius:12px;
+font-size:19px;line-height:1.55}
+textarea{
+ width:100%;min-height:130px;margin-top:18px;padding:14px;border:2px solid #d6dbe1;
+ border-radius:12px;font-size:17px;resize:vertical
+}
+button{
+ border:0;border-radius:12px;padding:13px 18px;margin:12px 8px 0 0;
+ font-size:16px;font-weight:700;cursor:pointer
+}
+.answer{background:#111827;color:white}
+.correct{background:#e8edf2;color:#111827}
+.result{
+ display:none;margin-top:18px;padding:18px;border-radius:12px;background:#f5f7f9;
+ line-height:1.55
+}
+.footer{margin-top:24px;color:#68717c;font-size:14px}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="tag">ИНТЕРАКТИВ ДЛЯ КЛАССА</div>
+<h1>Проверь себя: лазерные технологии</h1>
+
+<p class="lead">
+Представьте, что вам нужно вырезать сложную фигуру из листа титана толщиной 10 мм.
+</p>
+
+<div class="question">
+<b>Какой тип лазера — CO₂ или оптоволоконный — вы выберете и почему?</b><br><br>
+Обоснуйте ответ 1–2 предложениями.
+</div>
+
+<textarea id="answer" placeholder="Напишите свой ответ здесь..."></textarea>
+
+<div>
+<button class="answer" onclick="showAnswer()">Ответить</button>
+<button class="correct" onclick="showCorrect()">Правильный ответ</button>
+</div>
+
+<div id="myAnswer" class="result"></div>
+<div id="correctAnswer" class="result">
+<b>Правильный ответ:</b><br>
+Оптоволоконный лазер. Он имеет более высокую эффективность и качество луча,
+а также хорошо подходит для точной обработки металлов. Для сложной фигуры из
+титана толщиной 10 мм он будет предпочтительнее CO₂-лазера.
+</div>
+
+<div class="footer">
+Задание к презентации «Современные лазерные технологии в промышленности».
+</div>
+</main>
+
+<script>
+function showAnswer(){
+ const a=document.getElementById('answer').value.trim();
+ const box=document.getElementById('myAnswer');
+ if(!a){box.innerHTML="<b>Напишите ответ в поле выше.</b>";}
+ else{box.innerHTML="<b>Ваш ответ:</b><br>"+a.replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+ box.style.display="block";
+}
+function showCorrect(){
+ document.getElementById('correctAnswer').style.display="block";
+}
+</script>
+</body>
+</html>
