@@ -3,86 +3,375 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Задание — Лазерные технологии</title>
+
+<title>Тест — Современные лазерные технологии</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-  padding:24px;font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(135deg,#0b0d12,#1d2633);color:#fff
+
+* {
+    box-sizing: border-box;
 }
-.card{
-  width:min(760px,100%);background:#fff;color:#15191f;border-radius:24px;
-  padding:34px;box-shadow:0 20px 60px rgba(0,0,0,.35)
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #193b61, #050b13 70%);
+    min-height: 100vh;
+    padding: 25px;
+    color: #17202a;
 }
-.tag{display:inline-block;background:#111827;color:#fff;padding:8px 13px;border-radius:999px;
-font-size:13px;font-weight:700;letter-spacing:.04em}
-h1{font-size:clamp(26px,5vw,42px);margin:20px 0 12px}
-.lead{font-size:20px;line-height:1.55}
-.question{background:#f1f4f7;border-left:5px solid #111827;padding:20px;border-radius:12px;
-font-size:19px;line-height:1.55}
-textarea{
- width:100%;min-height:130px;margin-top:18px;padding:14px;border:2px solid #d6dbe1;
- border-radius:12px;font-size:17px;resize:vertical
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
 }
-button{
- border:0;border-radius:12px;padding:13px 18px;margin:12px 8px 0 0;
- font-size:16px;font-weight:700;cursor:pointer
+
+.header {
+    background: linear-gradient(135deg,#0b5ed7,#092f5e);
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
 }
-.answer{background:#111827;color:white}
-.correct{background:#e8edf2;color:#111827}
-.result{
- display:none;margin-top:18px;padding:18px;border-radius:12px;background:#f5f7f9;
- line-height:1.55
+
+.header h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
 }
-.footer{margin-top:24px;color:#68717c;font-size:14px}
+
+.header p {
+    margin: 0;
+    opacity: .9;
+}
+
+.question {
+    border: 1px solid #dfe5ec;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 18px 0;
+    background: #f8fafc;
+}
+
+.question-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.answer {
+    display: block;
+    padding: 12px;
+    margin: 7px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.answer:hover {
+    background: #e7f0ff;
+}
+
+.answer input {
+    margin-right: 8px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 13px;
+    padding: 16px;
+    margin-top: 10px;
+    background: #0b5ed7;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #084db2;
+}
+
+#result {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    background: #eaf3ff;
+    font-size: 20px;
+}
+
+.score {
+    font-size: 34px;
+    font-weight: bold;
+    color: #0b5ed7;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #777;
+    font-size: 14px;
+}
+
 </style>
 </head>
-<body>
-<main class="card">
-<div class="tag">ИНТЕРАКТИВ ДЛЯ КЛАССА</div>
-<h1>Проверь себя: лазерные технологии</h1>
 
-<p class="lead">
-Представьте, что вам нужно вырезать сложную фигуру из листа титана толщиной 10 мм.
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>🔬 Тест: современные лазерные технологии</h1>
+
+<p>
+Проверьте знания после презентации
+«Современные лазерные технологии в промышленности»
 </p>
 
+</div>
+
+<form id="quiz">
+
+<!-- ВОПРОС 1 -->
+
 <div class="question">
-<b>Какой тип лазера — CO₂ или оптоволоконный — вы выберете и почему?</b><br><br>
-Обоснуйте ответ 1–2 предложениями.
+
+<div class="question-title">
+1. Кто создал первый рубиновый лазер?
 </div>
 
-<textarea id="answer" placeholder="Напишите свой ответ здесь..."></textarea>
+<label class="answer">
+<input type="radio" name="q1" value="a">
+А. Эйнштейн
+</label>
 
-<div>
-<button class="answer" onclick="showAnswer()">Ответить</button>
-<button class="correct" onclick="showCorrect()">Правильный ответ</button>
+<label class="answer">
+<input type="radio" name="q1" value="b">
+Б. Т. Мейман
+</label>
+
+<label class="answer">
+<input type="radio" name="q1" value="c">
+В. А. Белл
+</label>
+
+<label class="answer">
+<input type="radio" name="q1" value="d">
+Г. Н. Бор
+</label>
+
 </div>
 
-<div id="myAnswer" class="result"></div>
-<div id="correctAnswer" class="result">
-<b>Правильный ответ:</b><br>
-Оптоволоконный лазер. Он имеет более высокую эффективность и качество луча,
-а также хорошо подходит для точной обработки металлов. Для сложной фигуры из
-титана толщиной 10 мм он будет предпочтительнее CO₂-лазера.
+
+<!-- ВОПРОС 2 -->
+
+<div class="question">
+
+<div class="question-title">
+2. Какое применение лазеров указано в презентации?
 </div>
+
+<label class="answer">
+<input type="radio" name="q2" value="a">
+А. Резка и раскрой
+</label>
+
+<label class="answer">
+<input type="radio" name="q2" value="b">
+Б. Производство топлива
+</label>
+
+<label class="answer">
+<input type="radio" name="q2" value="c">
+В. Очистка воды
+</label>
+
+<label class="answer">
+<input type="radio" name="q2" value="d">
+Г. Только освещение
+</label>
+
+</div>
+
+
+<!-- ВОПРОС 3 -->
+
+<div class="question">
+
+<div class="question-title">
+3. Какой лазер в презентации сравнивается с CO₂-лазером?
+</div>
+
+<label class="answer">
+<input type="radio" name="q3" value="a">
+А. Рубиновый
+</label>
+
+<label class="answer">
+<input type="radio" name="q3" value="b">
+Б. Газовый
+</label>
+
+<label class="answer">
+<input type="radio" name="q3" value="c">
+В. Волоконный
+</label>
+
+<label class="answer">
+<input type="radio" name="q3" value="d">
+Г. Ультрафиолетовый
+</label>
+
+</div>
+
+
+<!-- ВОПРОС 4 -->
+
+<div class="question">
+
+<div class="question-title">
+4. Что входит в состав лазера?
+</div>
+
+<label class="answer">
+<input type="radio" name="q4" value="a">
+А. Источник накачки, активная среда и оптический резонатор
+</label>
+
+<label class="answer">
+<input type="radio" name="q4" value="b">
+Б. Двигатель, батарея и вентилятор
+</label>
+
+<label class="answer">
+<input type="radio" name="q4" value="c">
+В. Камера, экран и процессор
+</label>
+
+<label class="answer">
+<input type="radio" name="q4" value="d">
+Г. Только линза и зеркало
+</label>
+
+</div>
+
+
+<!-- ВОПРОС 5 -->
+
+<div class="question">
+
+<div class="question-title">
+5. Какое важное преимущество лазерной обработки указано в презентации?
+</div>
+
+<label class="answer">
+<input type="radio" name="q5" value="a">
+А. Она не требует электричества
+</label>
+
+<label class="answer">
+<input type="radio" name="q5" value="b">
+Б. Материал можно обрабатывать без непосредственного контакта инструмента с деталью
+</label>
+
+<label class="answer">
+<input type="radio" name="q5" value="c">
+В. Она подходит только для дерева
+</label>
+
+<label class="answer">
+<input type="radio" name="q5" value="d">
+Г. Она не требует настройки
+</label>
+
+</div>
+
+
+<button type="button" onclick="checkQuiz()">
+Проверить ответы
+</button>
+
+</form>
+
+
+<div id="result"></div>
+
 
 <div class="footer">
-Задание к презентации «Современные лазерные технологии в промышленности».
+Современные лазерные технологии в промышленности
 </div>
-</main>
+
+</div>
+
 
 <script>
-function showAnswer(){
- const a=document.getElementById('answer').value.trim();
- const box=document.getElementById('myAnswer');
- if(!a){box.innerHTML="<b>Напишите ответ в поле выше.</b>";}
- else{box.innerHTML="<b>Ваш ответ:</b><br>"+a.replace(/</g,"&lt;").replace(/>/g,"&gt;");}
- box.style.display="block";
+
+function checkQuiz() {
+
+    const correct = {
+        q1: "b",
+        q2: "a",
+        q3: "c",
+        q4: "a",
+        q5: "b"
+    };
+
+    let score = 0;
+
+    for (let q in correct) {
+
+        const answer =
+        document.querySelector(
+            'input[name="' + q + '"]:checked'
+        );
+
+        if (answer && answer.value === correct[q]) {
+            score++;
+        }
+
+    }
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    let text = "";
+
+    if (score === 5) {
+        text = "🏆 Отлично! Все ответы правильные!";
+    }
+
+    else if (score >= 3) {
+        text = "👍 Хороший результат!";
+    }
+
+    else {
+        text = "📚 Стоит ещё раз посмотреть презентацию.";
+    }
+
+    result.innerHTML = `
+        ${text}
+        <br><br>
+        <div class="score">${score} / 5</div>
+        правильных ответов
+    `;
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+
 }
-function showCorrect(){
- document.getElementById('correctAnswer').style.display="block";
-}
+
 </script>
+
 </body>
 </html>
